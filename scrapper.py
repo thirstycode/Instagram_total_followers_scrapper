@@ -37,6 +37,7 @@ file = pandas.read_csv("export.csv")
 t= dt.now()
 # deleting first column
 file.drop(file.columns[[0]], axis=1, inplace=True)
+# adding column to export.csv with time
 file[t.strftime('%I:%M %p %d-%m')]=new_column
 # rewriting export.csv
 file.to_csv("export.csv")
